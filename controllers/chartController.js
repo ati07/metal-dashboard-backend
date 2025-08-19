@@ -20,9 +20,9 @@ export const getChartData = tryCatch(async (req, res) => {
 
   const monthly = records.map(r => ({
     month: r.month,
-    ...(chart === "ebitda" && { ebitda: r.ebitda, currentGrossProfit: r.currentGrossProfit }),
+    ...(chart === "ebitda" && { estimatedNetProfit: r.estimatedNetProfit, ebitda: r.ebitda }),
     ...(chart === "bankDeposits" && { bankDeposits: r.bankDeposits, cashPayments: r.cashPayments }),
-    ...(chart === "adjustedEbitda" && { adjustedEbitda: r.adjustedEbitda, currentGrossProfit: r.currentGrossProfit }),
+    ...(chart === "adjustedNetProfit" && { adjustedNetProfit: r.adjustedNetProfit, ebitda: r.ebitda }),
     ...(chart === "grossIncome" && { grossIncome: r.grossIncome, operationalCost: r.operationalCost })
   }));
 

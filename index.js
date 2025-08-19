@@ -7,6 +7,7 @@ import logRouter from './routes/log.js';
 import FinancialRecordRouter from './routes/financialRecordRoutes.js';
 import chartRoutes from "./routes/chartRoutes.js";
 import authRouter from './routes/auth.js';
+import cashflowRouter from './routes/cashflow.js';
 
 dotenv.config();
 
@@ -36,7 +37,7 @@ app.use("/api/charts", chartRoutes);
 app.use('/auth', authRouter);
 app.use('/user', userRouter);
 app.use('/api/logs', logRouter);
-
+app.use('/api/cashflow', cashflowRouter);
 
 
 
