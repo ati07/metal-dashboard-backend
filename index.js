@@ -8,6 +8,9 @@ import FinancialRecordRouter from './routes/financialRecordRoutes.js';
 import chartRoutes from "./routes/chartRoutes.js";
 import authRouter from './routes/auth.js';
 import cashflowRouter from './routes/cashflow.js';
+import InventoryRouter from './routes/inventory.js';
+import CategoryRouter from './routes/category.js';
+import VendorRouter from './routes/vendor.js';
 
 dotenv.config();
 
@@ -38,9 +41,9 @@ app.use('/auth', authRouter);
 app.use('/user', userRouter);
 app.use('/api/logs', logRouter);
 app.use('/api/cashflow', cashflowRouter);
-
-
-
+app.use('/inventory', InventoryRouter);
+app.use("/category", CategoryRouter);
+app.use('/vendor',  VendorRouter);
 
 app.get('/live', (req, res) => res.json({ message: 'Message from server' }));
 
