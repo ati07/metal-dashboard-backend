@@ -3,7 +3,8 @@ import mongoose from 'mongoose';
 const vendorSchema = new mongoose.Schema({
     addedBy: { type: mongoose.Types.ObjectId },
     companyName: { type: String },
-    categoryId: { type: mongoose.Types.ObjectId },    
+    // categoryId: { type: mongoose.Types.ObjectId }, 
+    categoryIds: [],   
     email: { type: String, required: true, unique: true },
     phoneNumber: { type: String },
     location: { type: String },

@@ -28,8 +28,9 @@ export const getVendor= tryCatch(async (req, res) => {
     isDelete: false
   }
 
-  const Vendors = await Vendor.find(findData).populate([
-    { path: 'categoryId', model: 'Category' }]).sort({ _id: -1 });
+  const Vendors = await Vendor.find(findData).sort({ _id: -1 });
+    // const Vendors = await Vendor.find(findData).populate([
+    // { path: 'categoryId', model: 'Category' }]).sort({ _id: -1 });
 
   res.status(200).json({ success: true, result: Vendors});
 });
