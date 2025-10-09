@@ -60,7 +60,6 @@ export const getInventory= tryCatch(async (req, res) => {
 
   const Inventorys = await Inventory.find(findData).populate([
     { path: 'vendorId', model: 'Vendor'},
-    { path: 'categoryId', model: 'Category'}
   ]).sort({ _id: -1 });
 
   res.status(200).json({ success: true, result: Inventorys});
