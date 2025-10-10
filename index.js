@@ -11,6 +11,7 @@ import cashflowRouter from './routes/cashflow.js';
 import InventoryRouter from './routes/inventory.js';
 import CategoryRouter from './routes/category.js';
 import VendorRouter from './routes/vendor.js';
+import CustomerRouter from './routes/customer.js';
 
 dotenv.config();
 
@@ -44,6 +45,8 @@ app.use('/api/cashflow', cashflowRouter);
 app.use('/inventory', InventoryRouter);
 app.use("/category", CategoryRouter);
 app.use('/vendor',  VendorRouter);
+app.use('/customer',  CustomerRouter);
+
 
 app.get('/live', (req, res) => res.json({ message: 'Message from server' }));
 
